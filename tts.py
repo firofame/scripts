@@ -7,8 +7,8 @@ import os
 from gemini_audio_client import process_text_file_concurrently
 
 # --- APPLICATION-SPECIFIC CONFIGURATION ---
-INPUT_FILE = "amanithafseer.txt"
-OUTPUT_DIR = "quran_audio"
+INPUT_FILE = "input.txt"
+OUTPUT_DIR = "audio"
 CONCURRENCY_LIMIT = 250 # Can be adjusted based on need
 
 SYSTEM_PROMPT = """
