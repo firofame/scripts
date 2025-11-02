@@ -1,7 +1,7 @@
 import os
 import glob
 import time
-from internetarchive import upload
+from internetarchive import upload, delete
 
 identifier = "BayyinahTVNoumanAliKhanConciseCommentary"
 source_directory = "Quran_Audio"
@@ -21,16 +21,8 @@ def upload_to_archive():
     start_time = time.time()
     
     try:
-        upload(
-            identifier, 
-            source_directory,
-            metadata=metadata,
-            verbose=True,
-            checksum=True,  # Skip already uploaded files
-            verify=True,    # Ensure data integrity
-            delete=False,    # Safe cleanup
-            retries=5       # Make it robust
-        )
+        upload(identifier, source_directory, metadata=metadata, verbose=True)
+        # delete(identifier, verbose=True, debug=True)
         
         print("\n" + "="*50)
         print(f"✓ UPLOAD PROCESS COMPLETED SUCCESSFULLY!")
